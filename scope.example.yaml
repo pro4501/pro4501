@@ -1,0 +1,36 @@
+# AEGIS engagement scope.
+#
+# Copy this file, fill it in for YOUR authorized engagement, and pass it with
+# --scope. AEGIS refuses to run against anything not listed here, and refuses
+# to run at all until `authorization.confirmed` is true.
+#
+# Only set `confirmed: true` if you have WRITTEN PERMISSION to test these
+# systems. Unauthorized testing is illegal.
+
+authorization:
+  client: "Acme Corp (lab)"
+  engagement: "Q4 external web assessment"
+  authorized_by: "Jane Doe, CISO — RoE signed 2026-10-20"
+  start_date: "2026-10-20"
+  end_date: "2026-11-20"
+  confirmed: false   # <-- set to true only with written authorization
+
+# At least one of hosts / cidrs / domains is required.
+
+# Explicit single hosts (names or IPs). Great targets to practice on:
+#   scanme.nmap.org is run by the Nmap project specifically for scan practice.
+hosts:
+  - scanme.nmap.org
+
+# Authorized network ranges. A name target must also resolve into one of these
+# if any CIDR is listed (belt-and-suspenders against DNS rebinding).
+cidrs: []
+
+# In-scope domains. Subdomains of these are in scope.
+domains: []
+
+# Never touch these, even if they fall inside the ranges above.
+excluded: []
+
+# Per-command wall-clock timeout (seconds).
+max_runtime_seconds: 300

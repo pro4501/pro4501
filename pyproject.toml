@@ -1,0 +1,24 @@
+[project]
+name = "aegis-pentest"
+version = "0.1.0"
+description = "AI-assisted, scope-gated authorized penetration testing with automatic reporting"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "anthropic>=1.0.0",
+    "PyYAML>=6.0",
+]
+
+[project.scripts]
+aegis = "aegis.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["aegis"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
